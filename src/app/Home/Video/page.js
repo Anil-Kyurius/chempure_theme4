@@ -25,7 +25,7 @@ export default function Video() {
                 <video
                     ref={videoRef}
                     className={`w-full lg:h-[80vh] object-fill z-50 transition duration-700 
-                        ease-in-out ${!palyVideo ? 'group-hover:opacity-[0.62]' : 'group-hover:opacity-100'}`}
+                        ease-in-out ${!palyVideo ? 'opacity-[0.62]' : 'opacity-100'}`}
                     controls={palyVideo ? true : false}
                     loop
                     muted
@@ -36,8 +36,7 @@ export default function Video() {
                 </video>
                 {
                     !palyVideo && (
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer z-50 opacity-0
-                         group-hover:opacity-[200]  transition-opacity duration-500">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer ">
                             <Image
                                 src={videoplay}
                                 alt="playvideo"

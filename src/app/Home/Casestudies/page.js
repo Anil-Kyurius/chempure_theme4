@@ -48,7 +48,7 @@ export default function Casestudies() {
     return (
         <div className="bg-[#ffffff] py-16 lg:pb-24 px-4  lg:px-0 lg:mx-[10%]  2xl:mx-[15%] ">
             <div className='my-2 lg:mx-[6%]'>
-                <p className="text-primart_clr font-semibold font-Montserrat text-[35px]">Case Studies</p>
+                <p className="text-primart_clr font-semibold font-Montserrat text-[35px] xl:text-[40px] 2xl:text-[48px]">Case Studies</p>
             </div>
             <Carousel
                 className=" py-10 lg:py-4 lg:ps-[6%] lg:-mr-[14.8%] 2xl:-mr-[23%]"
@@ -114,8 +114,8 @@ export default function Casestudies() {
                                         className='object-contain w-full '
                                     />
                                 <div className='absolute bottom-0 left-0 right-0 bg-[#103cac] opacity-[0.81] text-[#ffffff] px-4 py-2 lg:py-1 md:py-6 2xl:py-4'>
-                                    <p className='font-Montserrat font-semibold text-[20px]'>{item.title}</p>
-                                    <p className='font-Roboto font-normal text-[12px]'>{item.content}</p>
+                                    <p className='font-Montserrat font-semibold text-[20px] 2xl:text-2xl'>{item.title}</p>
+                                    <p className='font-Roboto font-normal text-[12px] 2xl:text-base'>{item.content}</p>
                                 </div>
                             </div>
                         </div>

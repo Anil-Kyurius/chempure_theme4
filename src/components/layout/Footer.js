@@ -13,17 +13,18 @@ export default function Footer() {
                 alt="chempureLogo"
                 width={130}
                 height={130}
+                className='2xl:w-[140px]'
               />
             </div>
-            <div className="flex flex-col lg:justify-between  gap-4 font-Roboto font-normal text-[15px]">
-              <p className='font-Roboto font-bold text-[18px]'>Quick Links</p>
+            <div className="flex flex-col lg:justify-between  gap-4 font-Roboto font-normal text-[15px] xl:text-[16px] 2xl:text-[18px]">
+              <p className='font-Roboto font-bold text-[17px] xl:text-[20px] 2xl:text-xl'>Quick Links</p>
               <p>Home</p>
               <p>About us</p>
               <p>Products</p>
               <p>Contact us</p>
             </div>
-            <div className=" flex flex-col lg:justify-between   gap-6  font-Roboto font-normal text-[13px] ">
-              <p className='font-Roboto font-bold text-[18px] '>Contact Us</p>
+            <div className=" flex flex-col lg:justify-between   gap-6  font-Roboto font-normal text-[13px] xl:text-[14px] 2xl:text-[18px]">
+              <p className='font-Roboto font-bold  text-[17px] xl:text-[20px] 2xl:text-xl'>Contact Us</p>
               <div className="flex  gap-3 items-start">
                 <div>
                   <Image src="/Assets/Location.webp" alt="location" width={12} height={12} />
@@ -44,11 +45,11 @@ export default function Footer() {
               </a>
             </div>
             <div className=' flex flex-col gap-4 '>
-              <p className='font-Roboto font-normal text-[16px]'>Newsletter</p>
+              <p className='font-Roboto font-normal text-[16px] xl:text-[17px] '>Newsletter</p>
               <div className='flex'>
                 <div className='w-full'>
                   <input type="text"
-                    className="p-2 w-full text-black placeholder-font-Roboto outline-none placeholder-font-normal placeholder-[#616161] placeholder:text-sm"
+                    className="p-2 w-full text-black placeholder-font-Roboto outline-none placeholder:font-normal placeholder-[#616161] placeholder:text-sm"
                     placeholder="Enter Your Email "
                   />
                 </div>
