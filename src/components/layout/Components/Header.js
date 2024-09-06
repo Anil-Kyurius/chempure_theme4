@@ -14,15 +14,15 @@ const Header = () => {
   return (
     <>
       <div className="w-full h-full py-1">
-        <header className="bg-white flex w-full h-full">
+        <header className="bg-yellow flex w-full h-full">
           {/* Logo */}
 
           <div className="relative w-full ">
-            <div className="h-full flex justify-between items-center xl:w-[90%] lg:w-[90%] mx-auto gap-2 lg:pl-4 px-3 lg:flex-nowrap flex-wrap">
+            <div className="h-full flex justify-between items-center xl:w-[90%] lg:w-[90%] mx-auto gap-4 lg:pl-4 px-3 lg:flex-nowrap flex-wrap">
               <div className="h-full rounded   py-3">
               <Link href="/">
                 <Image
-                  src="/ChempureLogo.webp"
+                  src="/Assets/ChempureWhiteLogo.webp"
                   alt="chempure logo"
                   className="w-52"
                   width={200}
@@ -34,8 +34,8 @@ const Header = () => {
               {/* desktop */}
 
 
-          <div className="rounded px-12 py-3 h-full w-full flex items-center justify-between">
-              <div className="w-[40%] ml-[5%] lg:block hidden ">
+          <div className="rounded px-2 py-3 h-full w-full flex items-center justify-between">
+              <div className="w-[35%] mx-[3%] lg:block hidden">
                 <Links />
               </div>
 
