@@ -43,7 +43,7 @@ export default function Insdustrysolutions() {
                                     <div className="flex-1  flex flex-col p-4  justify-center"></div>
                                     <div className="bg-[#18b5de] flex-1 p-4  flex flex-col  justify-center gap-2 text-[#ffffff]">
                                         <p className="lg:text-lg xl:text-2xl 2xl:text-3xl font-Montserrat font-semibold ">Formulation Development</p>
-                                        <p className=" text-sm  2xl:text-lg font-Roboto font-normal">
+                                        <p className=" text-sm  lg:text-base 2xl:text-lg font-Roboto font-normal">
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                         </p>
                                     </div>
@@ -54,13 +54,13 @@ export default function Insdustrysolutions() {
                             <div className=" flex-1  flex">
                                 <div className=" flex-1 p-4 flex flex-col  justify-center gap-2 bg-[#ffffff]">
                                     <p className="text-primart_clr lg:text-lg xl:text-2xl 2xl:text-3xl font-Montserrat font-bold ">Custom Chemical Synthesis</p>
-                                    <p className="text-[#616179] text-sm 2xl:text-lg font-Roboto font-normal">
+                                    <p className="text-[#616179] text-sm lg:text-base 2xl:text-lg font-Roboto font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                     </p>
                                 </div>
                                 <div className="flex-1 p-4 flex flex-col  justify-center gap-2 bg-[#103cac] text-[#ffffff]" >
                                     <p className="lg:text-lg xl:text-2xl 2xl:text-3xl  font-Montserrat font-semibold ">Analytical & Testing Services</p>
-                                    <p className="text-sm 2xl:text-lg font-Roboto font-normal">
+                                    <p className="text-sm lg:text-base 2xl:text-lg font-Roboto font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                     </p>
                                 </div>
@@ -68,13 +68,13 @@ export default function Insdustrysolutions() {
                             <div className=" flex-1 flex">
                                 <div className=" flex-1 p-4 flex flex-col  justify-center gap-2 bg-[#04215d] text-[#ffffff] ">
                                     <p className="lg:text-lg xl:text-2xl 2xl:text-3xl font-Montserrat font-bold ">Quality Control & Assurance</p>
-                                    <p className="text-sm  2xl:text-lg font-Roboto font-normal">
+                                    <p className="text-sm lg:text-base 2xl:text-lg font-Roboto font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                     </p>
                                 </div>
                                 <div className=" flex-1 p-4 flex flex-col  justify-center gap-2 bg-[#ebeef3] text-[#04215d] " >
                                     <p className="lg:text-lg xl:text-2xl 2xl:text-3xl font-Montserrat font-semibold ">Research & Development (R&D)</p>
-                                    <p className="text-sm  2xl:text-lg font-Roboto font-normal">
+                                    <p className="text-sm lg:text-base 2xl:text-lg font-Roboto font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                     </p>
                                 </div>

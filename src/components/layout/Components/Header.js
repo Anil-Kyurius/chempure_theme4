@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full h-full py-1">
-        <header className="bg-white flex w-full h-full">
+      <div className="w-full h-full py-1  z-[999] backdrop-blur-lg  transition-all duration-300">
+        <header className="flex w-full h-full">
           {/* Logo */}
 
           <div className="relative w-full ">
@@ -22,7 +22,7 @@ const Header = () => {
               <div className="h-full rounded   py-3">
               <Link href="/">
                 <Image
-                  src="/ChempureLogo.webp"
+                  src="/Chempure_logo.svg"
                   alt="chempure logo"
                   className="w-52"
                   width={200}
