@@ -115,7 +115,7 @@ export default function Casestudies() {
                                     />
                                 <div className='absolute bottom-0 left-0 right-0 bg-[#103cac] opacity-[0.81] text-[#ffffff] px-4 py-2 lg:py-1 md:py-6 2xl:py-4'>
                                     <p className='font-Montserrat font-semibold text-[20px] 2xl:text-2xl'>{item.title}</p>
-                                    <p className='font-Roboto font-normal text-[12px] 2xl:text-base'>{item.content}</p>
+                                    <p className='font-Roboto font-normal text-[12px] 2xl:text-xl'>{item.content}</p>
                                 </div>
                             </div>
                         </div>
