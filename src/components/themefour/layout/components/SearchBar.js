@@ -6,8 +6,8 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { setCookie, getCookie } from "cookies-next";
 
 import InitialLoader from "@public/InitialLoader.gif";
-import Api2 from "@/Api/api2";
-import searchicon from "@public/Image/Search_icon.svg";
+import Api2 from "@/api/api2";
+import searchicon from "@public/ThemeFour/Image/Search_icon.svg";
 
 const Autocomplete = dynamic(() => import("./Autocomplete"));
 

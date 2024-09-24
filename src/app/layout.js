@@ -1,7 +1,7 @@
 import { Roboto, Montserrat } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/layout/NavBar";
-import Footer from "@/components/layout/Footer";
+import NavBar from "@/components/themefour/layout/NavBar";
+import Footer from "@/components/themefour/layout/Footer";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       <body>
         <NavBar />
         {children}
-        {/* <Footer/> */}
+        <Footer/>
         </body>
     </html>
   );

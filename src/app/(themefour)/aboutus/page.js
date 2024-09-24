@@ -1,14 +1,14 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
-import banneraboutus from '@public/Aboutus/Aboutusbanner.webp';
-import biologist from '@public/Aboutus/Biologist.webp';
-import mark from '@public/Aboutus/mark.svg';
-import labscientist from '@public/Aboutus/labscientist.webp';
-import labscientisttwo from '@public/Aboutus/labscientisttwo.webp';
-import worldmap from '@public/Aboutus/worldmap.svg';
-import add from '@public/Aboutus/Addicon.svg';
-import remove from '@public/Aboutus/Removeicon.svg';
+import banneraboutus from '@public/ThemeFour/Aboutus/Aboutusbanner.webp';
+import biologist from '@public/ThemeFour/Aboutus/Biologist.webp';
+import mark from '@public/ThemeFour/Aboutus/mark.svg';
+import labscientist from '@public/ThemeFour/Aboutus/labscientist.webp';
+import labscientisttwo from '@public/ThemeFour/Aboutus/labscientisttwo.webp';
+import worldmap from '@public/ThemeFour/Aboutus/worldmap.svg';
+import add from '@public/ThemeFour/Aboutus/Addicon.svg';
+import remove from '@public/ThemeFour/Aboutus/Removeicon.svg';
 export default function AboutUs() {
     const [accordianExpand, setAccordianExpand] = useState(null);
     // console.log(accordianExpand,'accordianExpand');
