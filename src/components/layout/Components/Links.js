@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const LinkArray = [
@@ -7,7 +8,7 @@ const LinkArray = [
   },
   {
     name: "About us",
-    url: "About us",
+    url: "/Aboutus",
   },
 
   {
@@ -24,7 +25,9 @@ export default function Links() {
     <ul className=" flex font-Roboto gap-2 justify-between lg:text-white font-medium  lg:flex-row flex-col">
       {LinkArray.map((item) => (
         <li key={item.name} className="lg:my-0 my-5 lg:mx-0 mx-2 ">
+          <Link href={item.url}>
           {item.name}
+          </Link>
         </li>
       ))}
     </ul>

@@ -1,26 +1,36 @@
-import React from "react";
 
-function Banner() {
-  return (
-    <div
-      className="relative h-[100vh] "
-    >
-      <div className="bg-[url('/Assets/Women_chemical_substance.webp')]  absolute inset-0 bg-no-repeat bg-cover"></div>
-      {/* <div className="bg-blue"></div> */}
-      <div className="opacity-[0.79] absolute top-0 left-0 w-1/2 bg-[#103cac] h-full">
-      <div className="w-full">
-      <div className="w-[60%] absolute top-1/2 left-1/2 text-white transform -translate-x-1/2 -translate-y-1/2">
-       <p className="font-medium text-4xl font-Montserrat">
-       Driving Innovation in 
-         </p>
-         <p className="font-bold text-3xl font-Montserrat">Chemical Solutions</p>
-         <p className="font-Roboto text-lg pt-4">Explore our wide range of high-quality chemicals and laboratory equipment</p>
-         </div>
-         </div>
-      </div>
-      
-    </div>
-  );
+import Bannerimg from '@public/Banner/Banner.webp';
+import CustomercareIcon from '@public/Assets/CustomercareIcon.webp'
+import Image from 'next/image'
+export default function Banner() {
+    return (
+        <div>
+            <div className='relative'>
+                <Image
+                    src={Bannerimg}
+                    alt='banner'
+                    className='h-dvh  w-full'
+                />
+                <div className='absolute top-0 left-0 right-0 lg:right-1/2  bg-[#103cac] bottom-0 opacity-[0.84]'>
+                    <div className='w-[70%] absolute left-1/2 top-1/2 -translate-x-[55%] -translate-y-[70%] text-[#ffffff] flex flex-col gap-4'>
+                        <div className='leading-[1.5] '>
+                            <p className='text-[clamp(2.5rem,3vw,4.5rem)] xl:text-[clamp(2.6rem,3.2vw,4.7rem)] 2xl:text-[clamp(3rem,3.2vw,5rem)]  font-Montserrat font-medium'>Driving Innovation in</p>
+                            <p className='text-[clamp(1.5rem,2.5vw,3.5rem)] xl:text-[clamp(1.8rem,2.8vw,3.5rem)]  2xl:text-[clamp(2rem,3vw,4rem)]  font-Montserrat font-bold'>Chemical Solutions</p>
+                        </div>
+                        <div className='leading-[1.5] font-Roboto font-normal text-[18px] xl:text-lg 2xl:text-2xl'>
+                            <p>Explore our wide range of high-quality chemicals and </p>
+                            <p>laboratory equipment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Image
+                className="fixed bottom-4 right-10 w-16 z-50"
+                src={CustomercareIcon}
+                alt="ChatIcon"
+            />
+        </div>
+
+    )
 }
 
-export default Banner;
