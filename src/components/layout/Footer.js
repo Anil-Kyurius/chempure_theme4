@@ -3,6 +3,7 @@ import React from 'react'
 import inputarrow from '@public/Assets/input-arrow.svg'
 export default function Footer() {
   return (
+
     <div className='bg-[#eff1f7] '>
       <div>
         <div className='bg-[#142340]  relative -top-12 mx-[6%] lg:mx-[8%]  text-[#ffffff] h-max lg:h-auto 2xl:h-full'>
@@ -87,6 +88,7 @@ export default function Footer() {
           </div>
       </div>
     </div>
+
 
   )
 }

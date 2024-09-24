@@ -1,3 +1,4 @@
+
 import Bannerimg from '@public/Banner/Banner.webp';
 import CustomercareIcon from '@public/Assets/CustomercareIcon.webp'
 import Image from 'next/image'
@@ -32,3 +33,4 @@ export default function Banner() {
 
     )
 }
+
