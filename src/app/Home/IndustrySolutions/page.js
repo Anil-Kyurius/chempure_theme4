@@ -1,8 +1,8 @@
 import Image from "next/image";
-import chemicallab from '@public/IndustrySolutions/chemicalslab.webp';
-import MicroScope from '@public/IndustrySolutions/Microscope.webp';
-import arrow from '@public/IndustrySolutions/arrow.svg';
-import lab from '@public/IndustrySolutions/lab-equip.svg'
+import chemicallab from '@public/ThemeFour/IndustrySolutions/chemicalslab.webp';
+import MicroScope from '@public/ThemeFour/IndustrySolutions/Microscope.webp';
+import arrow from '@public/ThemeFour/IndustrySolutions/arrow.svg';
+import lab from '@public/ThemeFour/IndustrySolutions/lab-equip.svg'
 export default function Insdustrysolutions() {
     const Solutions = [
         {

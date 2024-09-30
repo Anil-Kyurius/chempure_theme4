@@ -1,6 +1,6 @@
 
-import Bannerimg from '@public/Banner/Banner.webp';
-import CustomercareIcon from '@public/Assets/CustomercareIcon.webp'
+import Bannerimg from '@public/ThemeFour/Banner/Banner.webp';
+import CustomercareIcon from '@public/ThemeFour/Assets/CustomercareIcon.webp'
 import Image from 'next/image'
 export default function Banner() {
     return (

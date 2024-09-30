@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
-import videoplay from '@public/CaseStudies/watchvideo.svg'
+import videoplay from '@public/ThemeFour/CaseStudies/watchvideo.svg'
 import Image from "next/image";
 export default function Video() {
     const [palyVideo, setPalyVideo] = useState(false);
@@ -32,7 +32,7 @@ export default function Video() {
                     defaultmuted="true"
                     playsInline
                 >
-                    <source src="/CaseStudies/Video1.mp4" type="video/mp4" />
+                    <source src="/ThemeFour/CaseStudies/Video1.mp4" type="video/mp4" />
                 </video>
                 {
                     !palyVideo && (

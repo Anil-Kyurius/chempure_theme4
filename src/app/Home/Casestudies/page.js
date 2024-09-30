@@ -1,8 +1,8 @@
 "use client"
-import chemical_substance from '@public/CaseStudies/chemical-substance.webp';
-import microscope from '@public/CaseStudies/microscope-medium.webp';
-import lab_equip from '@public/CaseStudies/science-laboratory.webp'
-import microbiologist from '@public/CaseStudies/microbiologist.webp'
+import chemical_substance from '@public/ThemeFour/CaseStudies/chemical-substance.webp';
+import microscope from '@public/ThemeFour/CaseStudies/microscope-medium.webp';
+import lab_equip from '@public/ThemeFour/CaseStudies/science-laboratory.webp'
+import microbiologist from '@public/ThemeFour/CaseStudies/microbiologist.webp'
 import Image from 'next/image';
 const Carousel = dynamic(() => import("react-multi-carousel"), { ssr: false });
 import "react-multi-carousel/lib/styles.css";
