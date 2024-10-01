@@ -6,8 +6,28 @@ const suggestionTypes = [
   { key: "product_name", label: "Product Name" },
   { key: "catalogue_no", label: "Product Number" },
 ];
+interface Suggestion {
+  label: string;
+  value: string;
+  source: string;
+}
+interface AutocompleteProps {
+  suggestions: Record<any, Suggestion[]>; 
+  suggestionIndex: number | null;
+  fetchData: (value: string) => Promise<void>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+  setQuickValue: React.Dispatch<React.SetStateAction<string>>;
+  value: string;
+  setSuggestionsActive: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  isVisible: boolean;
+  setdataType: React.Dispatch<React.SetStateAction<string>>;
+  inputRef: React.RefObject<HTMLInputElement>;
+  quickViewRef: React.RefObject<HTMLDivElement>;
+  recentSearch: string[];
+}
 
-const Autocomplete = ({
+const Autocomplete: React.FC<AutocompleteProps> = ({
   suggestions,
   inputRef,
   fetchData,
@@ -19,26 +39,26 @@ const Autocomplete = ({
   setQuickValue,
   recentSearch,
 }) => {
-  const suggestionBoxRef = useRef(null);
+  const suggestionBoxRef = useRef<HTMLUListElement>(null);
 
-  const handleClick = (label, source) => {
+  const handleClick = (label:string, source:string) => {
     setValue(label);
     fetchData(label);
     setSuggestionsActive(false);
     setdataType(source);
   };
 
-  const QuickViewHandler = (label, source) => {
+  const QuickViewHandler = (label:string, source:string) => {
     setQuickValue(label);
     setdataType(source);
     setIsVisible(true);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event:MouseEvent) => {
       if (
         suggestionBoxRef.current &&
-        !suggestionBoxRef.current.contains(event.target) &&
+        !suggestionBoxRef.current.contains(event.target as Node) &&
         !(inputRef.current === document.activeElement)
       ) {
         setSuggestionsActive(false);
@@ -58,7 +78,7 @@ const Autocomplete = ({
       ref={suggestionBoxRef}
       style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
     >
-      {suggestions.length !== 0 ? (
+      {Object.entries(suggestions).length !== 0 ? (
         suggestionTypes.map(
           ({ key, label }) =>
             suggestions[key] && (
@@ -138,7 +158,7 @@ const Autocomplete = ({
                       ${
                         value === item ? "text-white" : "group-hover:text-white"
                       }`}
-                    onClick={() => handleClick(item)}
+                    onClick={() => handleClick(item,'')}
                   >
                     {item}
                   </li>

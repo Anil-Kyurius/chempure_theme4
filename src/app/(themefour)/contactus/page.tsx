@@ -45,6 +45,7 @@ export default function Contactus() {
                                 <div className="flex items-center gap-6" key={index}>
                                     <div>
                                         <Image
+                                            alt="Contacticon"
                                             src={item.icon}
                                             width={35}
                                             height={44}
@@ -91,7 +92,7 @@ export default function Contactus() {
                                 </div>
                                 <div>
                                     <textarea
-                                        rows="5"
+                                        rows={5}
                                         name="message"
                                         placeholder="Message"
                                         className="w-full p-4 bg-bg-[#f6f6f6]rounded-md placeholder-[#66686b] placeholder:text-base bg-[#f6f6f6]
