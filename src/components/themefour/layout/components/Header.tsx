@@ -6,7 +6,7 @@ import Links from "./Links";
 import MobileDrawer from "./MobileDrawer";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };

@@ -16,7 +16,7 @@ function page() {
             alt="lab_room"
           />
 
-          <div class="absolute top-0 w-[50%]">
+          <div className="absolute top-0 w-[50%]">
             <div className="bg-[#18b5de] px-8 py-16">
               <p className="font-Montserrat font-semibold text-xl text-white">Formulation</p>
                 <p className="font-Montserrat font-semibold text-xl text-white">Development</p>

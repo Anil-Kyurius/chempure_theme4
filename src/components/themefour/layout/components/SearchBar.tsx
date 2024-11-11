@@ -10,33 +10,37 @@ import Api2 from "@/api/api2";
 import searchicon from "@public/ThemeFour/Image/Search_icon.svg";
 
 const Autocomplete = dynamic(() => import("./Autocomplete"));
-
-const SearchBar = () => {
+interface Suggestion {
+  label: string;
+  value: string;
+  source: string;
+}
+const SearchBar: React.FC  = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const getSearchvalue = searchParams.get("query");
-  const inputRef = useRef(null);
-  const quickViewRef = useRef(null);
-  const [suggestions, setSuggestions] = useState([]);
-  const [suggestionsFull, setSuggestionsFull] = useState([]);
-  const [recentSearch, setRecentSearch] = useState([]);
-  const [suggestionIndex, setSuggestionIndex] = useState(null);
-  const [suggestionsActive, setSuggestionsActive] = useState(false);
-  const [value, setValue] = useState("");
-  const [quickvalue, setQuickValue] = useState("");
-  const [dataType, setdataType] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [isLoadingSearchCombain, setIsLoadingSearchCombain] = useState(false);
-  const [timer, setTimer] = useState(null);
-  const [isVisible_Quick_View, setIsVisible_Quick_View] = useState(false);
-  const [checkJsData, setcheckJsData] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const quickViewRef = useRef<HTMLDivElement>(null);
+  const [suggestions, setSuggestions] = useState<Record<string, Suggestion[]>>({});
+  const [suggestionsFull, setSuggestionsFull] = useState<any[]>([]);
+  const [recentSearch, setRecentSearch] = useState<any[]>([]);
+  const [suggestionIndex, setSuggestionIndex] = useState<number | null >(null);
+  const [suggestionsActive, setSuggestionsActive] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("");
+  const [quickvalue, setQuickValue] = useState<string>("");
+  const [dataType, setdataType] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoadingSearchCombain, setIsLoadingSearchCombain] = useState<boolean>(false);
+  const [timer, setTimer] = useState<any | null>(null);
+  const [isVisible_Quick_View, setIsVisible_Quick_View] = useState<boolean>(false);
+  const [checkJsData, setcheckJsData] = useState<boolean>(false);
   // console.log('checkJsData',checkJsData);
   // console.log('isVisible_Quick_View',isVisible_Quick_View);
   // enter key no api call for suggestions
   const [noApicall, setNoApicall] = useState(false);
 
-  const fetchData = async (value) => {
+  const fetchData = async (value:string) => {
     if (!value) return;
     setcheckJsData(true);
     setIsLoadingSearchCombain(true);
@@ -79,9 +83,9 @@ const SearchBar = () => {
       ) {
         router.push(`/${catalog.data[0]?.url_name}`);
       } else {
-        router.push(`/search/${encodeURIComponent(value)}?query=${value}`, {
-          state: { value, data: response.data },
-        });
+        // router.push(`/search/${encodeURIComponent(value)}?query=${value}`, {state: { value, data: response.data },});
+        router.push(`/search/${encodeURIComponent(value)}?query=${value}&data=${JSON.stringify(response.data)}`);
+
       }
     } catch (error) {
       console.log(error);
@@ -91,14 +95,14 @@ const SearchBar = () => {
 
       // recent result
       let recentSearches = JSON.parse(getCookie("recentSearches") || "[]");
-      recentSearches = recentSearches.filter((term) => term !== value);
+      recentSearches = recentSearches.filter((term:string) => term !== value);
       recentSearches.unshift(value);
       recentSearches = recentSearches.slice(0, 5);
-      setCookie("recentSearches", JSON.stringify(recentSearches), 7); // Store for 7 days
+      setCookie("recentSearches", JSON.stringify(recentSearches),  {maxAge: 7 * 24 * 60 * 60} ); // Store for 7 days
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // console.log('e',e);
     const query = e.target.value;
     // console.log('query',query);
@@ -123,7 +127,7 @@ const SearchBar = () => {
         });
         setSuggestions(response.data.length !== 0 ? response.data : []);
         const singleArray = Object.keys(response.data).flatMap((category) =>
-          response.data[category].map((item) => ({ ...item, category }))
+          response.data[category].map((item:any) => ({ ...item, category }))
         );
         setSuggestionsFull(singleArray);
         if (
@@ -149,10 +153,10 @@ const SearchBar = () => {
 
   // only for search icon click
   const searchiconHanlder = useCallback(
-    (value) => {
+    (value:string) => {
       if (value.length >= 3) {
         fetchData(value);
-        setSuggestions([]);
+        setSuggestions({});
         setSuggestionsActive(false);
       }
     },
@@ -160,7 +164,7 @@ const SearchBar = () => {
   );
 
   const handleKeyDown = useCallback(
-    (e) => {
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.keyCode === 38 && suggestionsFull.length !== 0) {
         if (suggestionIndex === null || suggestionIndex === 0) return;
         setSuggestionIndex(suggestionIndex - 1);
@@ -173,16 +177,16 @@ const SearchBar = () => {
           setSuggestionIndex(suggestionIndex + 1);
           setValue(suggestionsFull[suggestionIndex + 1].label);
         }
-      } else if (e.keyCode === 13 && e.target.value.length >= 3) {
+      } else if (e.keyCode === 13 && e.currentTarget.value.length >= 3) {
         setcheckJsData(true);
 
-        fetchData(e.target.value);
+        fetchData(e.currentTarget.value);
         setNoApicall(true);
         setSuggestionIndex(0);
         setSuggestionsActive(false);
         setIsVisible_Quick_View(false);
 
-        setSuggestions([]);
+        setSuggestions({});
       }
     },
     [suggestionsFull, suggestionIndex, fetchData]
@@ -191,7 +195,7 @@ const SearchBar = () => {
   const handleFocus = () => {
     if (value !== "") {
       setSuggestionsActive(true);
-      handleChange({ target: { value } });
+      handleChange({ target: { value } } as React.ChangeEvent<HTMLInputElement>);
     } else {
       const searches = getCookie("recentSearches");
       setRecentSearch(searches ? JSON.parse(searches) : []);
@@ -207,7 +211,7 @@ const SearchBar = () => {
       setValue(""); // Clear the input when the query parameter is not present
       setSuggestionsActive(false);
       setSuggestionsFull([]);
-      setSuggestions([]);
+      setSuggestions({});
       setIsVisible_Quick_View(false);
     }
   }, [getSearchvalue]);

@@ -10,10 +10,10 @@ import worldmap from '@public/ThemeFour/Aboutus/worldmap.svg';
 import add from '@public/ThemeFour/Aboutus/Addicon.svg';
 import remove from '@public/ThemeFour/Aboutus/Removeicon.svg';
 export default function AboutUs() {
-    const [accordianExpand, setAccordianExpand] = useState(null);
+    const [accordianExpand, setAccordianExpand] = useState<number | null>(null);
     // console.log(accordianExpand,'accordianExpand');
     
-    const handleChange = (index) => {
+    const handleChange = (index:number) => {
         setAccordianExpand(accordianExpand === index ? null : index);
     };
     let ChooseUS = [
@@ -217,7 +217,7 @@ export default function AboutUs() {
                                 </div>
                                 <div>
                                     <textarea
-                                        rows="4"
+                                        rows={4}
                                         name="message"
                                         placeholder="Your Message"
                                         className="w-full  bg-transparent border-b border-b-[#6185e1] placeholder:font-light placeholder:font-Montserrat
@@ -243,7 +243,7 @@ export default function AboutUs() {
                     </div>
                     <div className="flex-1 ">
                         {
-                            Accordian && Accordian.map((accordion, index) => (
+                            Accordian && Accordian.map((accordion, index:number) => (
                                 <div key={index} >
                                     <div
                                         className="flex justify-between border-b border-b-[#e6e8f0] items-center py-4 cursor-pointer"

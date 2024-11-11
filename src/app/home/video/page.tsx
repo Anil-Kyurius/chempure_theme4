@@ -4,10 +4,10 @@ import videoplay from '@public/ThemeFour/CaseStudies/watchvideo.svg'
 import Image from "next/image";
 export default function Video() {
     const [palyVideo, setPalyVideo] = useState(false);
-    const videoRef = useRef(null);
+    const videoRef = useRef<HTMLVideoElement | null>(null);
     const handlePlayVideo = () => {
         setPalyVideo(true);
-        videoRef.current.play();
+        videoRef.current?.play();
     };
     useEffect(() => {
         if (videoRef.current) {
@@ -29,7 +29,7 @@ export default function Video() {
                     controls={palyVideo ? true : false}
                     loop
                     muted
-                    defaultmuted="true"
+                    // defaultmuted="true"
                     playsInline
                 >
                     <source src="/ThemeFour/CaseStudies/Video1.mp4" type="video/mp4" />

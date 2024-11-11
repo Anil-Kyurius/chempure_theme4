@@ -9,7 +9,7 @@ export default function Banner() {
                 <Image
                     src={Bannerimg}
                     alt='banner'
-                    className='h-dvh  w-full'
+                    className='h-dvh lg:h-full w-full'
                 />
                 <div className='absolute top-0 left-0 right-0 lg:right-1/2  bg-[#103cac] bottom-0 opacity-[0.84]'>
                     <div className='w-[70%] absolute left-1/2 top-1/2 -translate-x-[55%] -translate-y-[70%] text-[#ffffff] flex flex-col gap-4'>
